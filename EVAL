@@ -1,0 +1,34 @@
+Script started on Fri 08 Apr 2016 12:58:49 AM EDT
+/home/okeh/111/randwrite
+Files copied to sandbox
+Copying harness directory
+Test harness copied to sandbox
+Compiling...
+g++ -c randwrite.cc
+g++ -c list.cc
+g++ -o randwrite list.o randwrite.o
+Verified program compiles.
+Some perfunctory tests will verify some basic error checking
+and output length.
+
+These are forthcoming.  Check back soon.
+
+Have a great day.
+------------------------------------------------------------
+- Test: _mytest1
+------------------------------------------------------------
+len=500
+# running the program...
+./randwrite 4 $len midsummer.txt out.txt
+# displaying the content.
+ls -al out.txt
+size=$(stat -c "%s" out.txt)
+if [ $size -ne $len ]; then
+    echo "You have the wrong size output."
+else
+    echo "Test passed."
+fi
+------------------------------------------------------------
+-rw-rw---- 1 okeh okeh 500 Apr  8 00:58 out.txt
+Test passed.
+Evaluation complete.
